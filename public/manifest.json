@@ -1,0 +1,26 @@
+{
+  "name": "REACTJS SSR",
+  "short_name": "REACTJS",
+  "description": "REACTJS SSR BOILLERPLATE",
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/images/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
