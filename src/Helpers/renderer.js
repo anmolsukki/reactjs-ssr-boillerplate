@@ -27,7 +27,8 @@ export default (req, store, context) => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" rel="icon">
+        <link rel="icon" type="image/x-icon" rel="icon" href="/assets/images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
         <title>REACTJS SSR</title>
 

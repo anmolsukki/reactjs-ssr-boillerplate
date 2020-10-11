@@ -5,6 +5,7 @@ import { getUserAction } from '../Redux/Global/Action';
 
 class App extends Component {
   render() {
+    console.log('==========', this.props.userData);
     return <>{renderRoutes(this.props.route.routes)}</>;
   }
 }
