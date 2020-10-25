@@ -40,7 +40,19 @@ export default (req, store, context) => {
       </script>
 
       <script src="/dist.js"></script>
-      
+
+      <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+              return null;
+            }, function(err) {
+              return null;
+            });
+          });
+        }
+      </script>
+
 	  </body>
     </html>
   `;
