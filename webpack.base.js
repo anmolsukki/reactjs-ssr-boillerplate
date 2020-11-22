@@ -51,6 +51,10 @@ module.exports = {
             loader: 'expose-loader',
             options: '$',
           },
+          {
+            loader: 'expose-loader',
+            options: 'jquery',
+          },
         ],
       },
     ],
