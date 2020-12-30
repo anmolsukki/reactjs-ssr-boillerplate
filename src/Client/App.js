@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <HelmetTag title="React App" description="React App Boillerplate" />
-        <div>Name: {this.props.userData.name}</div>
+        <div>Name: {this.props.userData[0].name}</div>
         {renderRoutes(this.props.route.routes)}
       </div>
     );
