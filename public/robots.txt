@@ -1,1 +1,7 @@
+# www.robotstxt.org/
+
+# Allow crawling of all content
+User-agent: *
+
+Sitemap: https://github.com/anmolsukki/sitemap.xml
 Host: https://github.com/anmolsukki

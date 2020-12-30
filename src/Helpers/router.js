@@ -1,5 +1,5 @@
 import App from '../Client/App';
-import Home from '../Client/Container/Home';
+import HomePage from '../Client/Container/HomePage';
 
 export default [
   {
@@ -7,7 +7,7 @@ export default [
     routes: [
       {
         path: '/',
-        ...Home,
+        ...HomePage,
         exact: true,
       },
     ],
