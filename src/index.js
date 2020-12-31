@@ -6,20 +6,13 @@ import createStore from './Helpers/store';
 import 'babel-polyfill';
 
 var bodyParser = require('body-parser');
-// const basicAuth = require('express-basic-auth');
 
+// const basicAuth = require('express-basic-auth');
 const app = express();
 const PORT = process.env.PORT || 4500;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-/* app.use(
-  basicAuth({
-    users: { admin: 'admin' },
-    challenge: false,
-  })
-); */
 
 app.get('/dist.js', function (req, res, next) {
   req.url = req.url + '.gz';
@@ -29,6 +22,12 @@ app.get('/dist.js', function (req, res, next) {
 });
 
 app.use(express.static('public'));
+/* app.use(
+  basicAuth({
+    users: { admin: 'scbank' },
+    challenge: true,
+  })
+); */
 
 app.get('*', (req, res) => {
   const store = createStore(req);
