@@ -1,15 +1,14 @@
-import { matchRoutes } from 'react-router-config';
+import 'babel-polyfill';
 import express from 'express';
+import { matchRoutes } from 'react-router-config';
 import renderer from './Helpers/renderer';
 import Routes from './Helpers/router';
 import createStore from './Helpers/store';
-import 'babel-polyfill';
 
 var bodyParser = require('body-parser');
 
 // const basicAuth = require('express-basic-auth');
 const app = express();
-const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -58,6 +57,6 @@ app.get('*', (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(PORT, () => {
-  console.log(`server is up and running ${PORT}`);
+app.listen(3000, () => {
+  console.log(`server is up and running`);
 });
