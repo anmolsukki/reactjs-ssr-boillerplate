@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 
 // const basicAuth = require('express-basic-auth');
 const app = express();
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

@@ -9,11 +9,10 @@ import thunk from 'redux-thunk';
 import axios from 'axios';
 import reducers from '../Helpers/rootReducer';
 import Routes from '../Helpers/router';
-import API from '../Helpers/endpoints';
 import 'babel-polyfill';
 
 const axiosInstance = axios.create({
-  baseURL: API.BaseUrl,
+  baseURL: process.env.BaseUrl,
 });
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
