@@ -17,8 +17,12 @@ const axiosInstance = axios.create({
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 
-const enhancer =
-  process.env.NODE_ENV === 'production' ? composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance))) : composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance), logger));
+let enhancer = null;
+if (location.hostname === 'localhost') {
+  enhancer = composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance), logger));
+} else {
+  enhancer = composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance)));
+}
 
 const store = createStore(reducers, window.INITIAL_STATE, enhancer);
 
