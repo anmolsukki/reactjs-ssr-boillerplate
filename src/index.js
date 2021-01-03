@@ -57,6 +57,6 @@ app.get('*', (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log(`server is up and running`);
 });

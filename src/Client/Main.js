@@ -1,15 +1,15 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { BrowserRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import { Provider } from 'react-redux';
-import { hydrate } from 'react-dom';
-import { logger } from 'redux-logger';
-import React from 'react';
-import thunk from 'redux-thunk';
 import axios from 'axios';
+import 'babel-polyfill';
+import React from 'react';
+import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import { BrowserRouter } from 'react-router-dom';
+import { applyMiddleware, compose, createStore } from 'redux';
+import { logger } from 'redux-logger';
+import thunk from 'redux-thunk';
 import reducers from '../Helpers/rootReducer';
 import Routes from '../Helpers/router';
-import 'babel-polyfill';
 
 const axiosInstance = axios.create({
   baseURL: process.env.BaseUrl,
@@ -17,7 +17,8 @@ const axiosInstance = axios.create({
 
 const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 
-const enhancer = composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance), logger));
+const enhancer =
+  process.env.NODE_ENV === 'production' ? composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance))) : composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance), logger));
 
 const store = createStore(reducers, window.INITIAL_STATE, enhancer);
 

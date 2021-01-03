@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { renderRoutes } from 'react-router-config';
-import { HelmetTag } from '../Util/HelmetTag';
 import { connect } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
 import { getUserAction } from '../Redux/Global/Action';
+import { HelmetTag } from '../Util/HelmetTag';
 
 class App extends Component {
   render() {
