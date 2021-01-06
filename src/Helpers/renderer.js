@@ -1,10 +1,10 @@
 import React from 'react';
-import serialize from 'serialize-javascript';
 import { renderToString } from 'react-dom/server';
+import { Helmet } from 'react-helmet';
+import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { Helmet } from 'react-helmet';
+import serialize from 'serialize-javascript';
 import Routes from './router';
 
 export default (req, store, context) => {
@@ -24,11 +24,21 @@ export default (req, store, context) => {
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
         <meta charset="utf-8">
+        <meta name="theme-color" content="#000000" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta data-react-helmet="true" name="robots" content="INDEX, FOLLOW" />
         <meta data-react-helmet="true" name="googlebot" content="INDEX, FOLLOW">
+
+        <!-- Safari -->
+        <meta name="apple-mobile-web-app-apable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="ReactJS SSR" />
+
+        <!-- Internate Explorer -->
+        <meta name="msapplication-TileColor" content="#fff" />
+        <meta name="theme-color" content="#000000" />
 
         <link data-react-helmet="true" rel="canonical" href="https://github.com/anmolsukki"/>
         <link rel="icon" type="image/x-icon" rel="icon" href="/assets/images/favicon.ico">
