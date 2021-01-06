@@ -4,9 +4,8 @@
   "description": "reactjs ssr",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run open && npm-run-all --parallel dev:*",
+    "dev": "npm-run-all --parallel dev:*",
     "start": "npm run dev:server",
-    "open": "rundll32 url.dll,FileProtocolHandler http://localhost:3000/",
     "dev:server": "nodemon --watch build --exec node build/dist.js",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch"
