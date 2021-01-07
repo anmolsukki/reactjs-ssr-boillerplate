@@ -43,6 +43,7 @@ export default (req, store, context) => {
         <link data-react-helmet="true" rel="canonical" href="https://github.com/anmolsukki"/>
         <link rel="icon" type="image/x-icon" rel="icon" href="/assets/images/favicon.ico">
         <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1.1">
+        <link rel="stylesheet" type="text/css" href="/assets/css/LottieComponent.css">
         <link rel="stylesheet" type="text/css" href="/assets/css/notFound.css">
 
         <title>REACTJS SSR</title>

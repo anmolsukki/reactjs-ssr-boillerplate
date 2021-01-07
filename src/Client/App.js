@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import { getUserAction } from '../Redux/Global/Action';
 import { HelmetTag } from '../Util/HelmetTag';
+import Loader from './Components/MainComponent/Loader';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <HelmetTag title="React App" description="React App Boillerplate" />
         <div className="App">Name: {this.props.userData[0].name}</div>
         {renderRoutes(this.props.route.routes)}
+        <Loader loading={'Loading...'} />
       </div>
     );
   }
