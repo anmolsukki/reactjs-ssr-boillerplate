@@ -38,7 +38,6 @@ export default (req, store, context) => {
 
         <!-- Internate Explorer -->
         <meta name="msapplication-TileColor" content="#fff" />
-        <meta name="theme-color" content="#000000" />
 
         <link data-react-helmet="true" rel="canonical" href="https://github.com/anmolsukki"/>
         <link rel="icon" type="image/x-icon" rel="icon" href="/assets/images/favicon.ico">
