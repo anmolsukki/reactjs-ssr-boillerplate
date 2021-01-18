@@ -6,3 +6,7 @@ export function authHeaders(token) {
   };
   return header;
 }
+
+export function renderUrl() {
+  return '/';
+}
