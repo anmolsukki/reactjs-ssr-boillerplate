@@ -7,10 +7,6 @@ export function authHeaders(token) {
   return header;
 }
 
-export function renderUrl() {
-  return '/';
-}
-
 export const browserLog = (message, color, data) => {
   console.log(`%c${message}`, `color: ${color ? color : '#1687a7'}; font-weight: bolder; font-size: 13px; font-style: italic;`, data || '');
 };

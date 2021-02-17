@@ -7,14 +7,12 @@ import createStore from './Helpers/store';
 
 const chalk = require('chalk');
 var bodyParser = require('body-parser');
-
 // const basicAuth = require('express-basic-auth');
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-console.log(chalk.magenta.bold('Server Initialize'));
 
 app.get('/dist.js', function (req, res, next) {
   req.url = req.url + '.gz';

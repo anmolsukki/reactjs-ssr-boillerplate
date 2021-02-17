@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
 import serialize from 'serialize-javascript';
-import { renderUrl } from '../Util/GlobalFuntion';
 import Routes from './router';
+
+const renderUrl = process.env.RenderUrl;
 
 export default (req, store, context) => {
   const content = renderToString(
@@ -41,10 +42,10 @@ export default (req, store, context) => {
         <meta name="msapplication-TileColor" content="#fff" />
 
         <link data-react-helmet="true" rel="canonical" href="https://github.com/anmolsukki"/>
-        <link rel="icon" type="image/x-icon" rel="icon" href="${renderUrl()}images/favicon.ico">
-        <link rel="stylesheet" type="text/css" href="${renderUrl()}css/style.css?v=1.1">
-        <link rel="stylesheet" type="text/css" href="${renderUrl()}css/LottieComponent.css">
-        <link rel="stylesheet" type="text/css" href="${renderUrl()}css/notFound.css">
+        <link rel="icon" type="image/x-icon" rel="icon" href="${renderUrl}images/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="${renderUrl}css/style.css?v=1.1">
+        <link rel="stylesheet" type="text/css" href="${renderUrl}css/LottieComponent.css">
+        <link rel="stylesheet" type="text/css" href="${renderUrl}css/notFound.css">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=GA_CODE_HERE"></script>
@@ -62,12 +63,12 @@ export default (req, store, context) => {
           window.INITIAL_STATE = ${serialize(store.getState())}
       </script>
 
-      <script src="${renderUrl()}dist.js"></script>
+      <script src="${renderUrl}dist.js"></script>
 
       <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            navigator.serviceWorker.register('${renderUrl}service-worker.js').then(function(registration) {
               return null;
             }, function(err) {
               return null;
