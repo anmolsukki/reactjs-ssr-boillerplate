@@ -59,5 +59,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`server is up and running`);
+  console.log(chalk.hex('#073FCF').bold.underline(`server is up and running`));
 });

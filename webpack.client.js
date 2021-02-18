@@ -1,6 +1,7 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
+const configAssets = require('./config');
 
 const config = {
   mode: 'development',
@@ -10,7 +11,7 @@ const config = {
   },
   output: {
     filename: 'dist.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, `public${configAssets.PrefixPath}`),
   },
 };
 
